@@ -164,6 +164,8 @@ void AVSConnectionManager::receive(const std::string& contextId, const std::stri
         m_messageObservers};
     lock.unlock();
 
+    ACSDK_INFO(LX("AVSConnectionManager").d("receive", message));
+
     for (auto observer : observers) {
         if (observer) {
             observer->receive(contextId, message);

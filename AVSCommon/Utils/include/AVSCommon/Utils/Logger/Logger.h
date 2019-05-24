@@ -343,6 +343,7 @@ inline Logger& ACSDK_GET_LOGGER_FUNCTION() {
 
 #endif
 
+#define ACSDK_DEBUG_LOG_ENABLED
 /**
  * Common implementation for sending entries to the log.
  *
