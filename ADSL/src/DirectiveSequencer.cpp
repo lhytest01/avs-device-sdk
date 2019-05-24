@@ -76,7 +76,7 @@ bool DirectiveSequencer::onDirective(std::shared_ptr<AVSDirective> directive) {
         return false;
     }
     ACSDK_INFO(LX("onDirective").d("directive", directive->getHeaderAsString()));
-    ACSDK_INFO(LX("onDirective").d("directive", directive->getHeaderAsString()));
+    ACSDK_INFO(LX("onDirective").d("directive", directive->getUnparsedDirective()));
     m_receivingQueue.push_back(directive);
     m_wakeReceivingLoop.notify_one();
     return true;
