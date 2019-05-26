@@ -120,6 +120,8 @@ void AVSConnectionManager::reconnect() {
 
 void AVSConnectionManager::sendMessage(std::shared_ptr<avsCommon::avs::MessageRequest> request) {
     m_messageRouter->sendMessage(request);
+
+    ACSDK_INFO(LX("AVSConnectionManager").d("sendMessage", request->getJsonContent()));
 }
 
 bool AVSConnectionManager::isConnected() const {
