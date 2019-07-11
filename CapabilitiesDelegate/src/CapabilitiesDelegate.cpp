@@ -575,6 +575,7 @@ CapabilitiesDelegate::CapabilitiesPublishReturnCode CapabilitiesDelegate::publis
     ACSDK_INFO(LX("CapabilitiesDelegate").d("capabilitiesApiUrl", capabilitiesApiUrl));
     ACSDK_INFO(LX("CapabilitiesDelegate").d("m_capabilitiesPublishMessage", m_capabilitiesPublishMessage));
     ACSDK_INFO(LX("CapabilitiesDelegate").d("httpResponse.code", httpResponse.code));
+    ACSDK_INFO(LX("CapabilitiesDelegate").d("httpResponse.body", httpResponse.body));
 
     switch (httpResponse.code) {
         case HTTPResponseCode::SUCCESS_NO_CONTENT:
