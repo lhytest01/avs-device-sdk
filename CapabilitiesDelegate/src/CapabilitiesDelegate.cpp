@@ -572,6 +572,11 @@ CapabilitiesDelegate::CapabilitiesPublishReturnCode CapabilitiesDelegate::publis
 
     HTTPResponse httpResponse = m_httpPut->doPut(capabilitiesApiUrl, httpHeaderData, m_capabilitiesPublishMessage);
 
+    ACSDK_INFO(LX("CapabilitiesDelegate").d("capabilitiesApiUrl", capabilitiesApiUrl));
+    ACSDK_INFO(LX("CapabilitiesDelegate").d("httpHeaderData", httpHeaderData));
+    ACSDK_INFO(LX("CapabilitiesDelegate").d("m_capabilitiesPublishMessage", m_capabilitiesPublishMessage));
+    ACSDK_INFO(LX("CapabilitiesDelegate").d("httpResponse.code", httpResponse.code));
+
     switch (httpResponse.code) {
         case HTTPResponseCode::SUCCESS_NO_CONTENT:
             if (!saveCapabilitiesPublishData()) {
